@@ -4,13 +4,21 @@ DESCRIPCIÓN: DISEÑAR UNA BASE DE DATOS PARA GESTIONAR INFORMACIÓN SOBRE PLANT
 
 REQUERIMIENTOS:
 
-PROPIETARIOS
+PROPIETARIOS: Representa a los propietarios de las tierras degradadas. Se debe almacenar información de los propietarios, como su tipo (persona natural o jurídica), nombre completo o razón social, número de identificación, contacto y dirección.
 
+PREDIOS: Los terrenos asociados a los propietarios. Se debe almacenar información básica de los clientes, como su tipo (persona natural o jurídica), nombre completo o razón social, número de identificación, contacto y dirección.
 
+DIAGNOSTICO: El análisis del predio para determinar su condición y posibles tratamientos. Se debe almacenar información básica sobre el predio, fecha del diagnostico, tipo de suelo, degradacion, pendiente del terreno.
 
+PLANTACIONES: Actividades de reforestación en áreas degradadas. Se debe almacenar información básica sobre las plantaciones, nombre de la plantacion, superficie en ha, ubicacion, fecha de inicio y final de siembre de la plantacion.
 
+ESPECIES PLANTADAS: Registro de qué especies fueron plantadas en cada proyecto. Se debe almacenar información básica sobre las plantaciones, nombre de la plantacion, superficie en ha, ubicacion, fecha de inicio y final de siembre de la plantacion.
 
+ESPECIES: Catálogo de especies forestales y agroforestales. Se debe almacenar información sobre las especies como el nombre comun, nombre cientifico y usos. 
 
+MONITOREOS: Seguimiento del crecimiento y estado de las plantaciones. Se debe almacenar información sobre fecha de monitoreos, altura promedio de la plantacion, % supervivencia y mortandad, estado actual de la plantacion.
+
+MANTENIMIENTOS: Actividades de cuidado y mantenimiento de las plantaciones. Se debe almacenar información sobre la fecha de monitoreos, actividades y estado del mantenimiento. 
 
 
 
@@ -19,5 +27,8 @@ PROPIETARIOS
 ![image](https://github.com/user-attachments/assets/67d7359d-74db-4d46-af63-733f490f81fe)
 
 ### MODELO LOGICO
-![image](https://github.com/user-attachments/assets/2c067f21-665e-4387-9bb7-d59a995085fd)
+![image](https://github.com/user-attachments/assets/c891e6ba-0aca-4310-9e56-9809cce563d0)
+
+
+### MODELO FISICO
 
