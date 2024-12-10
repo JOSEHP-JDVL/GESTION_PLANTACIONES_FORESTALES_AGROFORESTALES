@@ -16,6 +16,8 @@ PROPIETARIOS
 
 
 ### MODELO ENTIDAD RELACION
+![image](https://github.com/user-attachments/assets/67d7359d-74db-4d46-af63-733f490f81fe)
 
 ### MODELO LOGICO
+![image](https://github.com/user-attachments/assets/2c067f21-665e-4387-9bb7-d59a995085fd)
 
