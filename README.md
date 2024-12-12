@@ -27,8 +27,9 @@ MANTENIMIENTOS: Actividades de cuidado y mantenimiento de las plantaciones. Se d
 ![image](https://github.com/user-attachments/assets/67d7359d-74db-4d46-af63-733f490f81fe)
 
 ### MODELO LOGICO
-![image](https://github.com/user-attachments/assets/c891e6ba-0aca-4310-9e56-9809cce563d0)
-
+![image](https://github.com/user-attachments/assets/e4ecde6e-e762-472f-a91a-e2ad5579d546)
 
 ### MODELO FISICO
+![image](https://github.com/user-attachments/assets/72f53055-3fb4-434e-a20e-863e1ed71824)
+
 
