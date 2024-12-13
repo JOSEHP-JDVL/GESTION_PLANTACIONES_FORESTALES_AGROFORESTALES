@@ -87,4 +87,133 @@ VALUES
 (19, '2024-08-01', 'No degradado', 'Arcilloso', 'Pastizal', 'Gestión sostenible de recursos.'),
 (20, '2024-08-10', 'No degradado', 'Arenoso', 'Bosque natural', 'Sin signos de degradación ni intervención antrópica.');
 
---
+--vt
+SELECT*FROM VT;
+EXEC sp_help VT;
+INSERT INTO VT (codigo, nombres, direccion)
+VALUES ('VTP001', 'VIRIDIS TERRA PERU', 'Av. Principal 123, Pucallpa, Ucayali');
+
+-- plantaciones
+SELECT*FROM plantaciones;
+EXEC sp_help plantaciones;
+
+INSERT INTO plantaciones (id_vt, id_diagnostico, nombre, superficie, ubicacion, fecha_inicio, fecha_final)
+VALUES
+(1, 1, 'Agroforestales Shihuahuaco-Cacao', 10.5, 'Distrito de Campo Verde, Ucayali', '2024-01-15', '2025-01-15'),
+(1, 2, 'Agroforestales Shihuahuaco-Cacao', 8.3, 'Distrito de Yarinacocha, Ucayali', '2024-02-20', '2025-02-20'),
+(1, 3, 'Agroforestales Shihuahuaco-Cacao', 12.0, 'Distrito de Coronel Portillo, Ucayali', '2024-03-10', '2025-03-10'),
+(1, 4, 'Agroforestales Shihuahuaco-Cacao', 7.5, 'Distrito de Manantay, Ucayali', '2024-04-05', '2025-04-05'),
+(1, 5, 'Agroforestales Shihuahuaco-Cacao', 6.0, 'Distrito de Campo Verde, Ucayali', '2024-05-10', '2025-05-10'),
+
+(1, 6, 'Agroforestales Shihuahuaco-Palma', 9.0, 'Distrito de Yarinacocha, Ucayali', '2024-01-20', '2025-01-20'),
+(1, 7, 'Agroforestales Shihuahuaco-Palma', 11.0, 'Distrito de Coronel Portillo, Ucayali', '2024-02-25', '2025-02-25'),
+(1, 8, 'Agroforestales Shihuahuaco-Palma', 5.5, 'Distrito de Manantay, Ucayali', '2024-03-15', '2025-03-15'),
+(1, 9, 'Agroforestales Shihuahuaco-Palma', 14.2, 'Distrito de Campo Verde, Ucayali', '2024-04-10', '2025-04-10'),
+(1, 10, 'Agroforestales Shihuahuaco-Palma', 13.0, 'Distrito de Yarinacocha, Ucayali', '2024-05-05', '2025-05-05'),
+
+(1, 11, 'Forestales Shihuahuaco-Pinochuncho', 6.8, 'Distrito de Manantay, Ucayali', '2024-01-25', '2025-01-25'),
+(1, 12, 'Forestales Shihuahuaco-Pinochuncho', 7.5, 'Distrito de Campo Verde, Ucayali', '2024-02-10', '2025-02-10'),
+(1, 13, 'Forestales Shihuahuaco-Pinochuncho', 8.0, 'Distrito de Yarinacocha, Ucayali', '2024-03-05', '2025-03-05'),
+(1, 14, 'Forestales Shihuahuaco-Pinochuncho', 9.2, 'Distrito de Coronel Portillo, Ucayali', '2024-04-15', '2025-04-15'),
+(1, 15, 'Forestales Shihuahuaco-Pinochuncho', 11.0, 'Distrito de Manantay, Ucayali', '2024-05-25', '2025-05-25'),
+
+(1, 16, 'Shihuahuaco-Marupa', 10.0, 'Distrito de Campo Verde, Ucayali', '2024-01-30', '2025-01-30'),
+(1, 17, 'Shihuahuaco-Marupa', 5.5, 'Distrito de Coronel Portillo, Ucayali', '2024-02-15', '2025-02-15'),
+(1, 18, 'Shihuahuaco-Marupa', 8.5, 'Distrito de Manantay, Ucayali', '2024-03-20', '2025-03-20'),
+(1, 19, 'Shihuahuaco-Marupa', 6.0, 'Distrito de Yarinacocha, Ucayali', '2024-04-30', '2025-04-30'),
+(1, 20, 'Shihuahuaco-Marupa', 9.0, 'Distrito de Campo Verde, Ucayali', '2024-05-15', '2025-05-15');
+
+
+--especies
+SELECT*FROM especies;
+EXEC sp_help especies;
+
+INSERT INTO especies (nombre_comun, nombre_cientifico, uso, descripcion)
+VALUES
+('Shihuahuaco', 'Dipteryx odorata', 'Madera, Extractos, Aceites esenciales', 'Conocido por su madera de alta calidad, utilizada en construcción y carpintería'),
+('Cacao', 'Theobroma cacao', 'Alimentos, Bebidas, Medicinal', 'utilizadas para producir chocolate. También tiene propiedades medicinales y antioxidantes.'),
+('Palma', 'Elaeis guineensis', 'Aceite, Alimentos, Forraje', 'Se obtiene aceite de palma, uno de los aceites vegetales más importantes a nivel mundial'),
+('Marupa', 'Simarouba amara', 'Madera, Medicina tradicional', 'La marupa es un árbol conocido por su madera liviana y resistente'),
+('Pinochuncho', 'Podocarpus glossophyllus', 'Madera, Construcción, Estructuras', 'ideal para la construcción y la fabricación de estructuras.');
+
+--especies plantadas
+SELECT*FROM especies_plantadas;
+EXEC sp_help especies_plantadas;
+
+INSERT INTO especies_plantadas (id_plantacion, id_especie, cantidad)
+VALUES
+(1, 11, 4000),   -- Shihuahuaco, 10 ha * 400 plantas/ha
+(2, 12, 10000),  -- Cacao, 10 ha * 1000 plantas/ha
+(3, 13, 13600),  -- Palma, 10 ha * 1360 plantas/ha
+(4, 14, 8000),   -- Marupa, 10 ha * 800 plantas/ha
+(5, 15, 5000),   -- Pinochuncho, 10 ha * 500 plantas/ha
+(6, 11, 4000),   -- Shihuahuaco, 10 ha * 400 plantas/ha
+(7, 12, 10000),  -- Cacao, 10 ha * 1000 plantas/ha
+(8, 13, 13600),  -- Palma, 10 ha * 1360 plantas/ha
+(9, 14, 8000),   -- Marupa, 10 ha * 800 plantas/ha
+(10, 15, 5000),   -- Pinochuncho, 10 ha * 500 plantas/ha
+(11, 11, 4000),   -- Shihuahuaco, 10 ha * 400 plantas/ha
+(12, 12, 10000),  -- Cacao, 10 ha * 1000 plantas/ha
+(13, 13, 13600),  -- Palma, 10 ha * 1360 plantas/ha
+(14, 14, 8000),   -- Marupa, 10 ha * 800 plantas/ha
+(15, 15, 5000),   -- Pinochuncho, 10 ha * 500 plantas/ha
+(16, 11, 4000),   -- Shihuahuaco, 10 ha * 400 plantas/ha
+(17, 12, 10000),  -- Cacao, 10 ha * 1000 plantas/ha
+(18, 13, 13600),  -- Palma, 10 ha * 1360 plantas/ha
+(19, 14, 8000),   -- Marupa, 10 ha * 800 plantas/ha
+(20, 15, 5000);   -- Pinochuncho, 10 ha * 500 plantas/ha
+
+
+--monitoreos
+SELECT*FROM monitoreos;
+EXEC sp_help monitoreos;
+
+INSERT INTO monitoreos (id_plantacion, fecha, altura_promedio, supervivencia, mortandad, estado, observaciones)
+VALUES
+(1, '2024-01-01', 3.5, 90, 10, 'Saludable', 'Monitoreo inicial realizado, plantación en buen estado'),
+(2, '2024-01-01', 4.0, 92, 8, 'Saludable', 'Plantación con crecimiento adecuado'),
+(3, '2024-01-01', 2.8, 88, 12, 'En crecimiento', 'Crecimiento adecuado pero algunas plantas con problemas'),
+(4, '2024-01-01', 3.2, 85, 15, 'En crecimiento', 'Requiere monitoreo frecuente para mejorar condiciones'),
+(5, '2024-01-01', 4.2, 93, 7, 'Saludable', 'Estado general muy bueno'),
+(6, '2024-01-01', 3.0, 89, 11, 'Saludable', 'No se reportaron problemas importantes'),
+(7, '2024-01-01', 2.5, 80, 20, 'Atenuado', 'Algunas áreas con mortalidad significativa'),
+(8, '2024-01-01', 4.1, 91, 9, 'Saludable', 'Plantación con desarrollo normal'),
+(9, '2024-01-01', 3.8, 90, 10, 'Saludable', 'Aptitud y crecimiento óptimos'),
+(10, '2024-01-01', 3.4, 87, 13, 'En crecimiento', 'Se recomienda control de plagas'),
+(11, '2024-02-01', 3.6, 91, 9, 'Saludable', 'Crecimiento y salud de plantas sin novedades'),
+(12, '2024-02-01', 4.0, 92, 8, 'Saludable', 'Desarrollo adecuado en todas las especies'),
+(13, '2024-02-01', 3.1, 88, 12, 'En crecimiento', 'Monitoreo frecuente recomendado debido a la humedad'),
+(14, '2024-02-01', 2.9, 84, 16, 'Atenuado', 'Requiere acción para mejorar supervivencia'),
+(15, '2024-02-01', 4.3, 94, 6, 'Saludable', 'Excelente condición de plantación'),
+(16, '2024-02-01', 3.3, 90, 10, 'Saludable', 'Sin observaciones importantes'),
+(17, '2024-02-01', 2.7, 82, 18, 'Atenuado', 'Problemas de riego en ciertas zonas'),
+(18, '2024-02-01', 3.9, 91, 9, 'Saludable', 'Crecimiento homogéneo'),
+(19, '2024-02-01', 4.0, 93, 7, 'Saludable', 'Estado general favorable'),
+(20, '2024-02-01', 3.2, 85, 15, 'En crecimiento', 'Se requieren ajustes en las condiciones de plantación');
+
+-- mantenimientos
+SELECT*FROM mantenimientos;
+EXEC sp_help mantenimientos;
+
+INSERT INTO mantenimientos (id_plantacion, fecha, descripcion, actividad, estado)
+VALUES
+(1, '2024-01-10', 'Monitoreo de plagas', 'Aplicación de pesticida', 'Completado'),
+(2, '2024-01-15', 'Control de maleza', 'Corte de maleza alrededor de las plantas', 'Completado'),
+(3, '2024-01-20', 'Riego de emergencia', 'Suministro de agua debido a sequía', 'Pendiente'),
+(4, '2024-01-25', 'Fertilización', 'Aplicación de fertilizantes en suelos pobres', 'Completado'),
+(5, '2024-02-01', 'Inspección general', 'Revisión del estado general de la plantación', 'Completado'),
+(6, '2024-02-05', 'Control de plagas', 'Aplicación de insecticida para controlar plagas', 'Completado'),
+(7, '2024-02-10', 'Control de maleza', 'Eliminación de maleza mediante desbroce', 'Pendiente'),
+(8, '2024-02-12', 'Replantación de áreas dañadas', 'Reemplazo de plantas que no sobrevivieron', 'Pendiente'),
+(9, '2024-02-15', 'Riego de mantenimiento', 'Riego regular a través de sistema de goteo', 'Completado'),
+(10, '2024-02-18', 'Fertilización de suelos', 'Aplicación de nutrientes a las plantas', 'Completado'),
+(11, '2024-03-01', 'Inspección de salud de plantas', 'Chequeo de plantas para detectar plagas', 'Pendiente'),
+(12, '2024-03-05', 'Control de plagas', 'Inspección de plagas y tratamiento', 'Completado'),
+(13, '2024-03-10', 'Mantenimiento de sistema de riego', 'Revisión y ajuste del sistema de riego', 'Pendiente'),
+(14, '2024-03-12', 'Monitoreo de crecimiento', 'Medición de la altura y estado de las plantas', 'Completado'),
+(15, '2024-03-15', 'Control de maleza', 'Aplicación de herbicidas en áreas afectadas', 'Pendiente'),
+(16, '2024-03-20', 'Inspección de plantas afectadas', 'Revisión de plantas con síntomas de enfermedad', 'Completado'),
+(17, '2024-03-25', 'Replantación de especies', 'Sustitución de plantas muertas por nuevas', 'Pendiente'),
+(18, '2024-03-28', 'Riego', 'Riego suplementario en temporada seca', 'Completado'),
+(19, '2024-04-02', 'Fertilización de plantas', 'Aplicación de abono orgánico', 'Pendiente'),
+(20, '2024-04-05', 'Mantenimiento de senderos', 'Limpieza y mantenimiento de caminos de acceso', 'Completado');
